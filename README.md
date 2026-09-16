@@ -49,17 +49,20 @@ A lightweight, responsive, frontend-only web application that replicates the cor
 ## 📁 Project Architecture
 
 ```text
-src/
-├── components/
-│   ├── layout/       # App shell and headers
-│   ├── story-tray/   # Horizontal scroll, add button, thumbnails
-│   ├── story-feed/   # Grid cards for uploaded stories
-│   └── viewer/       # Full-screen modal and delete confirmation
-├── store/
-│   └── useStoryStore.js   # Zustand state and localStorage syncing
-├── utils/
-│   └── mediaProcessor.js  # Canvas resizing and Base64 conversion
-└── App.jsx           # Main assembly
+├── hooks/
+│   └── useStoryStore.js       # Zustand state and localStorage syncing
+├── public/                    # Static assets
+├── src/
+│   ├── assets/                # Project assets
+│   ├── store/                 # State management directories
+│   ├── utils/
+│   │   └── mediaProcessor.jsx # Canvas resizing and Base64 conversion
+│   ├── App.jsx                # Main assembly and UI components
+│   ├── index.css              # Tailwind directives
+│   └── main.jsx               # React entry point
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
 ## 🔮 Future Enhancements
