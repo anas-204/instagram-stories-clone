@@ -2,7 +2,9 @@
 
 A lightweight, responsive, frontend-only web application that replicates the core functionality of Instagram Stories. Built with performance and clean UI in mind, this project allows users to upload, view, and delete fleeting stories that are persisted directly on the device.
 
-![Live Demo Deploy](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
+[![Live Demo Deploy](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)](https://instagram-stories-clone-tau.vercel.app/)
+
+**🔗 Live Preview:** [https://instagram-stories-clone-tau.vercel.app/](https://instagram-stories-clone-tau.vercel.app/)
 
 ## ✨ Features
 
