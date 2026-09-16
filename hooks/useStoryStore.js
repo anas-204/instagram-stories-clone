@@ -22,7 +22,42 @@ export const useStoryStore = create(
       isConfirmingDelete: false,
       
       addStory: (mediaData, type) => set((state) => ({
-        stories: [{ id: Date.now().toString(), mediaData, type, timestamp: Date.now() }, ...state.stories]
+        stories: [{ 
+          id: Date.now().toString(), 
+          mediaData, 
+          type, 
+          timestamp: Date.now(),
+          reactions: { like: 0, love: 0 },
+          comments: []
+        }, ...state.stories]
+      })),
+      
+      addTextStory: (text, bgColor) => set((state) => ({
+        stories: [{
+          id: Date.now().toString(),
+          mediaData: text,
+          type: 'text',
+          bgColor,
+          timestamp: Date.now(),
+          reactions: { like: 0, love: 0 },
+          comments: []
+        }, ...state.stories]
+      })),
+
+      addReaction: (storyId, reactionType) => set((state) => ({
+        stories: state.stories.map(story => 
+          story.id === storyId 
+            ? { ...story, reactions: { ...story.reactions, [reactionType]: story.reactions[reactionType] + 1 } }
+            : story
+        )
+      })),
+
+      addComment: (storyId, text) => set((state) => ({
+        stories: state.stories.map(story => 
+          story.id === storyId 
+            ? { ...story, comments: [...story.comments, { id: Date.now().toString(), text, timestamp: Date.now() }] }
+            : story
+        )
       })),
       
       removeStory: (id) => set((state) => ({
